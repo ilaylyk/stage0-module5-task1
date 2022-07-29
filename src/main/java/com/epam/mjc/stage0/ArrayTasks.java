@@ -11,7 +11,7 @@ public class ArrayTasks {
      * Return a String[] array that will list all the seasons of the year, starting with winter.
      */
     public String[] seasonsArray() {
-
+        return new String[]{"winter", "spring", "summer", "autumn"};
     }
 
     /**
@@ -25,7 +25,13 @@ public class ArrayTasks {
      * length = 5  -> [1, 2, 3, 4, 5]
      */
     public int[] generateNumbers(int length) {
-
+        int j = 1;
+        int[] result = new int[length];
+        for (int i = 0; i < length; i++){
+            result[i] += j;
+            j++;
+        }
+        return result;
     }
 
     /**
@@ -37,7 +43,11 @@ public class ArrayTasks {
      * arr = [5, -3, -4] -> sum = -2
      */
     public int totalSum(int[] arr) {
-
+        int sum = 0;
+        for (int j : arr) {
+            sum += j;
+        }
+        return sum;
     }
 
     /**
@@ -50,7 +60,12 @@ public class ArrayTasks {
      * arr = [5, -3, -4],   number = 10    ->  -1
      */
     public int findIndexOfNumber(int[] arr, int number) {
-
+        for (int i = 1; i < arr.length; i++){
+            if (arr[i] == number){
+                return i;
+            }
+        }
+        return -1;
     }
 
     /**
@@ -63,7 +78,12 @@ public class ArrayTasks {
      * arr = ["pineapple", "apple", "pen"] -> ["pen", "apple", "pineapple"]
      */
     public String[] reverseArray(String[] arr) {
-
+        for (int i = 0; i < arr.length / 2; i++) {
+            String tmp = arr[i];
+            arr[i] = arr[arr.length - i - 1];
+            arr[arr.length - i - 1] = tmp;
+        }
+        return arr;
     }
 
     /**
@@ -78,7 +98,21 @@ public class ArrayTasks {
      * arr = [1, 2]         -> [1, 2]
      */
     public int[] getOnlyPositiveNumbers(int[] arr) {
-
+        int arraySize = 0;
+        for (int i = 0; i < arr.length; i++){
+            if (arr[i] > 0){
+                arraySize++;
+            }
+        }
+        int[] result = new int[arraySize];
+        int j=0;
+        for (int k : arr) {
+            if (k > 0) {
+                result[j] = k;
+                j++;
+            }
+        }
+        return result;
     }
 
     /**
